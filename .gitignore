@@ -1,8 +1,5 @@
 node_modules
-<<<<<<< HEAD
-dist
-=======
->>>>>>> gh-pages
 .tmp
 .sass-cache
 bower_components
+.DS_Store

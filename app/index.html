@@ -16,27 +16,34 @@
     <!-- endbuild -->
   </head>
   <body ng-app="coffeeCartApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <section class="container-fluid custom-container">
+      <section class="jumbotron opaque">
+          <div class="row">
+              <h1 class="col-lg-6 text-center">Dad's Coffee Cart</h1>
+            <span class="col-lg-6">
+                <span class="filler col-lg-2"></span>
+                <a class="btn btn-lg col-lg-4 header-btn" href="#what-we-offer">What we offer</a>
+                <span class="filler col-lg-2"></span>
+                <span class="col-lg-4">
+                    <a class="btn btn-lg header-btn" href="#pricing">Pricing</a>
+                </span>
+            </span>
+          </div>
 
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">coffeeCart</h3>
-      </div>
+      </section>
 
-      <div ng-view=""></div>
+  </section>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+  <section class="container-fluid white-divider">
+
+  </section>
+
+  <section id="what-we-offer" class="container-fluid what-we-offer">
+
+  </section>
+
+
+  <section class="container enquiry-forms"></section>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

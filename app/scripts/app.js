@@ -15,13 +15,16 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+
+        templateUrl: 'views/enquiry.html',
+        controller: 'EnquiryCtrl'
+
       })
       .when('/about', {
         templateUrl: 'views/about.html',

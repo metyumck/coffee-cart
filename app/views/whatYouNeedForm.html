@@ -1,0 +1,50 @@
+<p class="lead panel-info">On this, page you can select what services or products you would like to enquire about.</p>
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Choose service or products.</label>
+
+        <div class="col-sm-5">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="whatYouNeed.buyBeansBool"> Buy coffee beans.
+                </label><br>
+                <label>
+                    <input type="checkbox" ng-model="whatYouNeed.rentCartBool"> Rent a coffee cart and or a barista.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="page-header" ng-show="whatYouNeed.buyBeansBool">
+        <h4>Buy Coffee Beans</h4>
+    </div>
+    <div class="form-group" ng-show="whatYouNeed.buyBeansBool">
+        <label for="coffeeType" class="col-sm-2 control-label">Coffee Bean Type</label>
+        <div class="col-sm-5">
+            <select id="coffeeType" class="form-control" ng-model="coffee-type">
+                <option>Ethiopean blend</option>
+                <option>Single origin brazil</option>
+                <option>Really fancy coffee</option>
+                <option></option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group" ng-show="whatYouNeed.buyBeansBool">
+        <label for="coffeeQuantity" class="col-sm-2 control-label">Coffee Bean Type</label>
+        <div class="col-sm-5">
+            <input id="coffeeQuantity" type="number" value="1">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-show="!isLastTab" ng-click="nextTab()">Next</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-show="isLastTab" ng-click="submitData()">Finish and Submit</button>
+        </div>
+    </div>
+</form>

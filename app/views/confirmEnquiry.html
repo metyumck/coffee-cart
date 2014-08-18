@@ -1,0 +1,12 @@
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-show="!isLastTab" ng-click="nextTab()">Next</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-show="isLastTab" ng-click="submitData()">Finish and Submit</button>
+        </div>
+    </div>
+</form>

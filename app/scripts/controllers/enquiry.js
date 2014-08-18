@@ -17,6 +17,27 @@ angular.module('coffeeCartApp')
 
     $scope.yourDetails = {};
     $scope.whatYouNeed = {};
+    $scope.coffeeAndQuantity = [];
+    $scope.isLastTab = false;
+    
+    $scope.addCoffee = function (coffeeType, coffeeQnty) {
+      console.log(coffeeType);
+      $scope.coffeeAndQuantity.push({name: coffeeType, qnty: coffeeQnty});
+
+    };
+
+    $scope.removeCoffee = function (index) {
+      $scope.coffeeAndQuantity.splice(index, 1);
+
+    };
+
+    $scope.$watch('whatYouNeed.buyBeansBool', function (data) {
+      if (!data) {
+        $scope.coffeeAndQuantity = [];
+    }
+
+    });
+
 
     $scope.enquiryTabs = [{
       heading: 'Your Details',
@@ -32,10 +53,6 @@ angular.module('coffeeCartApp')
       content: '/views/confirmEnquiry.html',
       disabled: true
     }];
-
-    $scope.coffeeAndQuantity = [];
-
-    $scope.isLastTab = false;
 
     $scope.nextTab = function () {
 

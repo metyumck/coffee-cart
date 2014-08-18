@@ -8,37 +8,15 @@
  * Controller of the coffeeCartApp
  */
 angular.module('coffeeCartApp')
-  .controller('EnquiryCtrl', function ($scope) {
+  .controller('EnquiryCtrl', function ($scope, firebaseCrud) {
 
-    $scope.submitData = function () {
+    
 
-
-    };
-
+    //Initialise data
     $scope.yourDetails = {};
     $scope.whatYouNeed = {};
     $scope.coffeeAndQuantity = [];
     $scope.isLastTab = false;
-    
-    $scope.addCoffee = function (coffeeType, coffeeQnty) {
-      console.log(coffeeType);
-      $scope.coffeeAndQuantity.push({name: coffeeType, qnty: coffeeQnty});
-
-    };
-
-    $scope.removeCoffee = function (index) {
-      $scope.coffeeAndQuantity.splice(index, 1);
-
-    };
-
-    $scope.$watch('whatYouNeed.buyBeansBool', function (data) {
-      if (!data) {
-        $scope.coffeeAndQuantity = [];
-    }
-
-    });
-
-
     $scope.enquiryTabs = [{
       heading: 'Your Details',
       content: '/views/yourDetailsForm.html',
@@ -54,6 +32,23 @@ angular.module('coffeeCartApp')
       disabled: true
     }];
 
+    //Functions
+    $scope.submitData = function () {
+      firebaseCrud.testFunction();
+
+    };
+    
+    $scope.addCoffee = function (coffeeType, coffeeQnty) {
+      console.log(coffeeType);
+      $scope.coffeeAndQuantity.push({name: coffeeType, qnty: coffeeQnty});
+
+    };
+
+    $scope.removeCoffee = function (index) {
+      $scope.coffeeAndQuantity.splice(index, 1);
+
+    };
+
     $scope.nextTab = function () {
 
       if ($scope.enquiryTabs[0].active === true) {
@@ -66,5 +61,17 @@ angular.module('coffeeCartApp')
         $scope.isLastTab = true;
       }
     };
+
+    //Watchers
+    $scope.$watch('whatYouNeed.buyBeansBool', function (data) {
+      if (!data) {
+        $scope.coffeeAndQuantity = [];
+    }
+
+    });
+
+
+
+
 
 });

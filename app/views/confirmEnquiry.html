@@ -1,12 +1,25 @@
-<form class="form-horizontal" role="form">
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary" ng-show="!isLastTab" ng-click="nextTab()">Next</button>
+<div class="centered">
+    <h4 class="page-header">Your Details</h4>
+    <p>First Name: {{yourDetails.firstName}}</p>
+    <p>Postcode: {{yourDetails.postcode}}</p>
+    <p ng-show="yourDetails.phone">Phone: {{yourDetails.phone}}</p>
+    <p ng-show="yourDetails.email">Email: {{yourDetails.email}}</p>
+    
+    <h4 class="page-header">What You Need</h4>
+    <p ng-show="whatYouNeed.buyBeansBool">
+        <ul>
+            <li ng-repeat="coffee in coffeeAndQuantity">
+                Coffee: {{coffee.name}}, Quantity: {{coffee.qnty}}
+            </li>
+        </ul>
+    </p>
+    <p ng-show="whatYouNeed.rentCartBool"> {{whatYouNeed.rentType}} for {{whatYouNeed.rentDuration}} hours</p>
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-show="isLastTab" ng-click="submitData()">Finish and Submit</button>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary" ng-show="isLastTab" ng-click="submitData()">Finish and Submit</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>

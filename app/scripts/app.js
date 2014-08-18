@@ -21,10 +21,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-
         templateUrl: 'views/enquiry.html',
         controller: 'EnquiryCtrl'
-
       })
       .when('/about', {
         templateUrl: 'views/about.html',

@@ -20,16 +20,17 @@ angular.module('coffeeCartApp')
     $scope.enquiryTabs = [{
       heading: 'Your Details',
       content: '/views/yourDetailsForm.html',
-      active: true
+      active: true,
+      tabDisabled: false
     },{
       heading: 'What You Need',
       content: '/views/whatYouNeedForm.html',
-      disabled: true
+      tabDisabled: true
 
     },{
       heading: 'Confirmation',
       content: '/views/confirmEnquiry.html',
-      disabled: true
+      tabDisabled: true
     }];
 
     //Functions
@@ -53,11 +54,11 @@ angular.module('coffeeCartApp')
 
       if ($scope.enquiryTabs[0].active === true) {
         $scope.enquiryTabs[1].active = true;
-        $scope.enquiryTabs[1].disabled = false;
+        $scope.enquiryTabs[1].tabDisabled = false;
       } else {
         $scope.validateWhatYouNeed = true;
         $scope.enquiryTabs[2].active = true;
-        $scope.enquiryTabs[2].disabled = false;
+        $scope.enquiryTabs[2].tabDisabled = false;
         $scope.isLastTab = true;
       }
     };

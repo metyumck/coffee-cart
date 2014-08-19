@@ -3,7 +3,7 @@
     <h1 class="page-header">Make an enquiry</h1>
 
     <tabset justified="true">
-        <tab data-ng-repeat="tab in enquiryTabs" heading="{{tab.heading}}" active="tab.active" disabled="tab.disabled">
+        <tab data-ng-repeat="tab in enquiryTabs" heading="{{tab.heading}}" active="tab.active" disabled="tab.tabDisabled">
             <div ng-include="tab.content"></div>
         </tab>
     </tabset>
